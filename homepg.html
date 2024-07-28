@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+    .pg1,.pg2{
+        height: 100vh;
+        width: 100vw;
+        background-color: rgb(50, 170, 245);
+        color: rgb(255, 255, 255);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    h1 span{
+        display: inline-block;
+        font-family: monospace;
+        font-size: 11vh;
+        color: transparent;
+        -webkit-text-stroke: 1px white; 
+        text-shadow: none;
+    }
+    h2{
+        font-size: 8vh;
+        font-family: monospace;
+        color: whitesmoke;
+        font-weight: bold;
+    }
+    .pg1 .box{
+        height: 100px;
+        width: 100px;
+        border: 1px solid white;
+        border-radius: 10px;
+        margin-left: -920px;
+        margin-top: -250px;
+        box-shadow: 1px 1px 5px whitesmoke;
+    }
+</style>
+<body>
+    <div class="pg1">
+        <h1>Revolutionizing&nbsp;Healthcare</h1>
+        <h2>With AI</h2>
+        <div class="box"></div>
+    </div>
+    <div class="pg2"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        function breakText(){
+            var h1 = document.querySelector("h1")
+            var h1Text = document.querySelector("h1").textContent;
+            var split = h1Text.split("");
+            var clutter = "";
+            split.forEach(function(elem,index){
+                if(index<16){
+                    clutter += `<span class="part1">${elem}</span>`
+                }
+                else{
+                    clutter += `<span class="part2">${elem}</span>`
+                }
+            })
+            h1.innerHTML = clutter
+        }
+        breakText();
+        gsap.from(".part1",{
+            x: 50,
+            opacity: 0,
+            scale: 0,
+            duration: 0.5,
+            delay: 0.2,
+            stagger: 0.05,
+            ease: "back"
+        })
+        gsap.from(".part2",{
+            y: 70,
+            opacity: 0,
+            scale: 0,
+            duration: 0.5,
+            delay: 1.25,
+            stagger: 0.05,
+            ease: "back"
+        })
+        gsap.from("h2",{
+            y:20,
+            opacity:0,
+            duration:1,
+            ease:"powerinOut",
+            delay:1.5,
+        })
+        gsap.from(".pg1 .box",{
+            scrollTrigger:{
+                trigger:".pg1 .box",
+                scroller:"body",
+                start: "top center",
+                end: "bottom",
+                scrub:3
+            },
+            rotate:360
+        })
+    </script>
+</body>
+</html>
