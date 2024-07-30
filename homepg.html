@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <style>
-    body{
+    body {
         margin: 0;
         padding: 0;
         overflow-x: hidden;
     }
-    .pg1,.pg2{
+
+    .pg1 {
         height: 100vh;
         width: 100vw;
         background-color: rgb(50, 170, 245);
@@ -21,57 +29,165 @@
         justify-content: center;
         flex-direction: column;
     }
-    h1 span{
+
+    h1 span {
         display: inline-block;
         font-family: monospace;
         font-size: 11vh;
         color: transparent;
-        -webkit-text-stroke: 1px white; 
+        -webkit-text-stroke: 1px white;
         text-shadow: none;
     }
-    h2{
+
+    h2 {
         font-size: 8vh;
         font-family: monospace;
         color: whitesmoke;
         font-weight: bold;
     }
-    .pg1 .box{
+
+    .pg1 .box {
         height: 100px;
         width: 100px;
         border: 1px solid white;
         border-radius: 10px;
         margin-left: -920px;
-        margin-top: -250px;
+        margin-top: -165px;
         box-shadow: 1px 1px 5px whitesmoke;
     }
+
+    .pg2 {
+        background-color: whitesmoke;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .pg2 .nav {
+        background-color: rgb(152, 255, 152);
+        height: 20vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: sticky;
+        margin-top: -320px;
+        top: 0;
+    }
+
+    .pg2 .nav h3 {
+        font-size: 35px;
+        font-family: "Dancing Script";
+    }
+
+    .pg2 .nav h4 {
+        font-size: 17px;
+    }
+
+    .pg2 .search {
+        width: 60vw;
+        position: relative;
+        top: 25%;
+    }
+
+    .pg2 .dropdown {
+        width: 60vw;
+        position: relative;
+        top: 2%;
+    }
+    .pg2 .container-fluid {
+        position: relative;
+        top: 250px;
+        height: 15vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        gap: 10px; 
+    }
+
+    .pg2 .container-fluid .circ {
+        height: 80px;
+        width: 80px;
+        background-color: lightseagreen; 
+        border-radius: 50%; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
 </style>
+
 <body>
     <div class="pg1">
         <h1>Revolutionizing&nbsp;Healthcare</h1>
         <h2>With AI</h2>
         <div class="box"></div>
     </div>
-    <div class="pg2"></div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <div class="pg2">
+        <div class="nav">
+            <h3>Health is the greatest gift, contentment the greatest wealth, faithfulness the best relationship.</h3>
+            <h4>Gautama Buddha</h4>
+        </div>
+        <div class="search">
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Ask a medical question..."
+                    aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Get Answer</button>
+            </form>
+        </div>
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Language
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <li><a class="dropdown-item" href="#">Hindi</a></li>
+                <li><a class="dropdown-item" href="#">Marathi</a></li>
+                <li><a class="dropdown-item" href="#">Gujrati</a></li>
+                <li><a class="dropdown-item" href="#">Tamil</a></li>
+                <li><a class="dropdown-item" href="#">Bengali</a></li>
+            </ul>
+        </div>
+        <div class="container-fluid">
+            <div class="circ" data-bs-toggle="tooltip" data-bs-placement="top" title="Medications"><i class="bi bi-capsule" style="font-size: 2.4rem; color: #ffffff;"></i></div>
+            <div class="circ" data-bs-toggle="tooltip" data-bs-placement="top" title="Upload Image"><i class="bi bi-camera" style="font-size: 2.4rem; color: #ffffff;"></i></div>
+            <div class="circ" data-bs-toggle="tooltip" data-bs-placement="top" title="Sexual Wellbeing"><i class="bi bi-gender-trans" style="font-size: 2.4rem; color: #ffffff;"></i></div>
+            <div class="circ" data-bs-toggle="tooltip" data-bs-placement="top" title="Gynae Health"><i class="bi bi-gender-female" style="font-size: 2.4rem; color: #ffffff;"></i></div>
+            <div class="circ" data-bs-toggle="tooltip" data-bs-placement="top" title="Medical History"><i class="bi bi-clipboard2-pulse-fill" style="font-size: 2.4rem; color: #ffffff;"></i></div>
+        </div>        
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+        integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
     <script>
-        function breakText(){
+        function breakText() {
             var h1 = document.querySelector("h1")
             var h1Text = document.querySelector("h1").textContent;
             var split = h1Text.split("");
             var clutter = "";
-            split.forEach(function(elem,index){
-                if(index<16){
+            split.forEach(function (elem, index) {
+                if (index < 16) {
                     clutter += `<span class="part1">${elem}</span>`
                 }
-                else{
+                else {
                     clutter += `<span class="part2">${elem}</span>`
                 }
             })
             h1.innerHTML = clutter
         }
         breakText();
-        gsap.from(".part1",{
+        gsap.from(".part1", {
             x: 50,
             opacity: 0,
             scale: 0,
@@ -80,7 +196,7 @@
             stagger: 0.05,
             ease: "back"
         })
-        gsap.from(".part2",{
+        gsap.from(".part2", {
             y: 70,
             opacity: 0,
             scale: 0,
@@ -89,23 +205,31 @@
             stagger: 0.05,
             ease: "back"
         })
-        gsap.from("h2",{
-            y:20,
-            opacity:0,
-            duration:1,
-            ease:"powerinOut",
-            delay:1.5,
+        gsap.from("h2", {
+            y: 20,
+            opacity: 0,
+            duration: 1,
+            ease: "powerinOut",
+            delay: 1.5,
         })
-        gsap.from(".pg1 .box",{
-            scrollTrigger:{
-                trigger:".pg1 .box",
-                scroller:"body",
+        gsap.from(".pg1 .box", {
+            scrollTrigger: {
+                trigger: ".pg1 .box",
+                scroller: "body",
                 start: "top center",
                 end: "bottom",
-                scrub:3
+                scrub: 3
             },
-            rotate:360
+            rotate: 360
         })
+        document.addEventListener('DOMContentLoaded', function () {
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl)
+            })
+        });
+
     </script>
 </body>
+
 </html>
