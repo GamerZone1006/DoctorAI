@@ -119,9 +119,14 @@
         align-items: center;
         justify-content: center;
         cursor: pointer;
+        animation: all 1s linear;
+    }
+    .pg2 .container-fluid .circ:hover{
+        background-color: rgb(4, 161, 154);
+        height: 82px;
+        width: 82px;
     }
 </style>
-
 <body>
     <div class="pg1">
         <h1>Revolutionizing&nbsp;Healthcare</h1>
@@ -158,7 +163,7 @@
             <div class="circ" data-bs-toggle="tooltip" data-bs-placement="top" title="Upload Image"><i class="bi bi-camera" style="font-size: 2.4rem; color: #ffffff;"></i></div>
             <div class="circ" data-bs-toggle="tooltip" data-bs-placement="top" title="Sexual Wellbeing"><i class="bi bi-gender-trans" style="font-size: 2.4rem; color: #ffffff;"></i></div>
             <div class="circ" data-bs-toggle="tooltip" data-bs-placement="top" title="Gynae Health"><i class="bi bi-gender-female" style="font-size: 2.4rem; color: #ffffff;"></i></div>
-            <div class="circ" data-bs-toggle="tooltip" data-bs-placement="top" title="Medical History"><i class="bi bi-clipboard2-pulse-fill" style="font-size: 2.4rem; color: #ffffff;"></i></div>
+            <div class="circ" data-bs-toggle="tooltip" data-bs-placement="top" title="Medical History"><a href="dashboard.html"><i class="bi bi-clipboard2-pulse-fill" style="font-size: 2.4rem; color: #ffffff;"></i></a></div>
         </div>        
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
@@ -228,7 +233,6 @@
                 return new bootstrap.Tooltip(tooltipTriggerEl)
             })
         });
-
     </script>
 </body>
 

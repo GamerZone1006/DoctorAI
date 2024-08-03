@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            height: 70vh;
+            width: 80vw;
+            padding: 20px;
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            box-shadow: 1px 1px 10px black;
+            width: 60vw;
+        }
+
+        .profilebtn {
+            align-self: stretch;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .profilebtn .btn {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .offcanvas {
+            background-color: #0e70f1;
+            color: white;
+        }
+
+        .offcanvas-body ul li {
+            cursor: pointer;
+        }
+
+        .center-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            margin-top: -20px;
+        }
+
+        .content .pt1, .pt2, .pt3 {
+            gap: 2rem;
+            justify-content: space-between;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .circ-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .circ {
+            height: 80px;
+            width: 80px;
+            background-color: lightseagreen;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            margin-bottom: 5px;
+            box-shadow: 1px 1px 5px black;
+        }
+        .circ:hover{
+            background-color: rgb(12, 170, 162);
+        }
+        .circ-label {
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="profilebtn">
+            <h1>Your Medical Dashboard</h1>
+            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i class="bi bi-person-fill"
+                    style="font-size: 2.4rem; color: #ffffff;"></i></button>
+        </div>
+        <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+            id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Profile</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <h4>Personal Info</h4>
+                <ul>
+                    <li>Name</li>
+                    <li>Age</li>
+                    <li>Gender</li>
+                    <li>Contact Information</li>
+                    <li>Emergency Contact Details</li>
+                </ul>
+                <button type="button" class="btn btn-outline-light"><i class="bi bi-box-arrow-right"></i> Sign Out</button>
+            </div>
+        </div>
+        <div class="content">
+            <div class="pt1">
+                <div class="circ-container">
+                    <div class="circ"><i class="bi bi-capsule-pill" style="font-size: 2.4rem; color: #ffffff;"></i></div>
+                    <div class="circ-label">Medications</div>
+                </div>
+                <div class="circ-container">
+                    <div class="circ"><i class="bi bi-activity" style="font-size: 2.4rem; color: #ffffff;"></i></div>
+                    <div class="circ-label">Heart Rate</div>
+                </div>
+                <div class="circ-container">
+                    <div class="circ"><i class="bi bi-alarm-fill" style="font-size: 2.4rem; color: #ffffff;"></i></div>
+                    <div class="circ-label">Reminders</div>
+                </div>
+                <div class="circ-container">
+                    <div class="circ"><i class="bi bi-thermometer-half" style="font-size: 2.4rem; color: #ffffff;"></i></div>
+                    <div class="circ-label">Body Temperature</div>
+                </div>
+            </div>
+            <div class="pt2">
+                <div class="circ-container">
+                    <div class="circ"><i class="bi bi-calendar2-fill" style="font-size: 2.4rem; color: #ffffff;"></i></div>
+                    <div class="circ-label">Weight</div>
+                </div>
+                <div class="circ-container">
+                    <div class="circ"><i class="bi bi-droplet-fill" style="font-size: 2.4rem; color: #ffffff;"></i></div>
+                    <div class="circ-label">Blood Pressure</div>
+                </div>
+                <div class="circ-container">
+                    <div class="circ"><i class="bi bi-fire" style="font-size: 2.4rem; color: #ffffff;"></i></div>
+                    <div class="circ-label">Calories</div>
+                </div>
+                <div class="circ-container">
+                    <div class="circ"><i class="bi bi-cup-straw" style="font-size: 2.4rem; color: #ffffff;"></i></div>
+                    <div class="circ-label">Diet Plan</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
